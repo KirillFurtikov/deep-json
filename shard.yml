@@ -1,0 +1,14 @@
+name: deep-json
+version: 0.1.0
+
+authors:
+  - Kirill Furtikov <kafurtikov@gmail.com>
+
+crystal: 1.9.2
+
+license: MIT
+
+development_dependencies:
+  spectator:
+    gitlab: arctic-fox/spectator
+    version: ~> 0.11.0

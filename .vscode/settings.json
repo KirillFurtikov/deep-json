@@ -1,0 +1,7 @@
+{
+    "crystal-lang.completion": true,
+    "crystal-lang.logLevel": "debug",
+    "crystal-lang.hover": true,
+    "crystal-lang.implementations": true,
+    "crystal-lang.mainFile": "${workspaceRoot}/src/deep-json.cr"
+}
