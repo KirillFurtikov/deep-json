@@ -12,6 +12,11 @@ module DeepJSON
         data = data.size
         break
       end
+      if is_int?(key)
+        key = key.to_i32
+        data = read_by_index(key, data)
+        break
+      end
       key = key.to_i32 if data.as_a? # if array, set key as index
       data = read_by_key(key, data)
     end
@@ -32,7 +37,19 @@ module DeepJSON
     end
   end
 
+  private def read_by_index(index : Int32, value : JSON::Any)
+    begin
+      value[index]
+    rescue
+      raise Exception.new("Invalid index #{index}, should be < #{value.size}")
+    end
+  end
+
   private def is_anchor?(key)
     return true if key == "#"
+  end
+
+  private def is_int?(key)
+    return true if key.to_i32?
   end
 end

@@ -24,6 +24,7 @@ describe DeepJSON do
       "glossary.GlossDiv.null", nil,
       "glossary.GlossDiv.title\"s", "S",
       "glossary.size.#", 3,
+      "glossary.size.1", "asd",
     ].each_slice(2) do |data|
       it "get #{data[0]} => #{data[1]}" do
         DeepJSON.get(data[0].as(String), value).should eq(data[1])
